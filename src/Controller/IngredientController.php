@@ -81,13 +81,23 @@ class IngredientController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-
-    // Je dois récupérer l'ingrédient à modifier par son id dans $repository
-    #[Route('/ingredient/edition/{id}', 'ingredient.edit', methods:['GET', 'POST'])]
-    // 1ere METHODE
-    //public function edit(IngredientRepository $repository, int $id):Response
+        /**
+      * This controller allow us to edit an ingredient
+      *
+      * @param Ingredient $ingredient
+      * @param Request $request
+      * @param EntityManagerInterface $manager
+      * @return Response
+      */
     
-    // 2eme METHODE
+         // Je dois récupérer l'ingrédient à modifier par son id dans $repository
+     #[Route('/ingredient/edition/{id}', 'ingredient.edit', methods:['GET', 'POST'])]
+     // 1ere METHODE
+     //public function edit(IngredientRepository $repository, int $id):Response
+     
+     // 2eme METHODE
+
+     
     public function edit(
         Ingredient $ingredient, 
         Request $request, 
